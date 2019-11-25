@@ -12,6 +12,18 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Models\User::class,20)->create();
+        User::truncate();
+        $this->seeder();
     }
+    /**
+     * 添加负责人（1名）
+     */
+    private function seeder(){
+        $user=new User();
+        $user->name='admin';
+        $user->email='test@163.com';
+        $user->password=bcrypt('admin');
+        $user->save();
+    }
+    
 }

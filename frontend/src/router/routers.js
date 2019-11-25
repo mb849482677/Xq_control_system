@@ -52,9 +52,62 @@ export default [
           icon: 'md-home'
         },
         component: () => import('@/view/single-page/home')
+      },
+    ]
+  },
+  {
+    /**
+        王东洋
+    */
+    path: '/manage',
+    name: '设备管理',
+    component: Main,
+    meta: {
+      title: '文档',
+      icon: 'ios-book'
+    },
+    children: [
+      {
+        /**
+        宗立波
+         */
+        path: 'manamge-page',
+        name: '设备管理',
+        meta: {
+          icon: 'ios-infinite',
+          title: '管理页面',
+          hideInMenu: true
+        },
+        component: () => import('@/view/manage-page/manage.vue')
       }
     ]
   },
-
-
+  {
+    /**
+        王东洋
+    */
+    path: '/video',
+    name: '远程视频',
+    component: Main,
+    meta: {
+      title: '文档',
+      icon: 'ios-book'
+    },
+    children: [
+      {
+        /**
+        宗立波
+         */
+        path: 'video-page',
+        name: '远程视频',
+        meta: {
+          icon: 'ios-infinite',
+          title: '视频',
+          hideInMenu: true
+        },
+        component: () => import('@/view/real-time-video/video.vue')
+        // component: () => import('@/view/manage-page/manage.vue')
+      }
+    ]
+  },
 ]
